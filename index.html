@@ -37,17 +37,73 @@
   }
   /* ---------- iPad / tablet scaling ---------- */
   @media (min-width:700px){
-    :root{--app-width:640px;--radius:22px;}
+    :root{--app-width:680px;--radius:22px;}
     body{display:flex;align-items:flex-start;justify-content:center;padding:28px 0;}
     .app{border-radius:26px;min-height:auto;box-shadow:0 20px 60px rgba(0,0,0,.14);}
-    .grid2{grid-template-columns:repeat(4,1fr);}
-    .hero .points{font-size:56px;}
-    .section-title{font-size:24px;}
-    main{padding:26px 30px 34px;}
-  }
-  @media (min-width:1000px){
-    :root{--app-width:760px;}
+    main{padding:28px 34px 38px;}
+
+    /* header */
+    header{padding:20px 28px 18px;}
+    .logo{width:60px;height:60px;}
+    .matrix .route{font-size:13px;}
+    .matrix .dest{font-size:26px;}
+    .settings-btn{width:44px;height:44px;font-size:20px;}
+
+    /* headings */
+    .eyebrow{font-size:12.5px;margin-bottom:8px;}
+    .section-title{font-size:28px;margin-bottom:18px;}
+
+    /* hero */
+    .hero{padding:28px;}
+    .hero .label{font-size:14px;}
     .hero .points{font-size:64px;}
+    .hero .squadname{font-size:16px;}
+    .hero .streak{font-size:14.5px;padding:8px 16px;}
+
+    /* stat grid — stays 2 columns, just bigger */
+    .grid2{gap:16px;}
+    .stat{padding:20px;}
+    .stat .num{font-size:32px;}
+    .stat .cap{font-size:13.5px;}
+
+    /* cards */
+    .card{padding:22px;margin-bottom:16px;}
+    .card h3{font-size:18px;margin-bottom:6px;}
+    .card .sub{font-size:14.5px;line-height:1.5;}
+    .sponsor{font-size:11.5px;padding:4px 10px;}
+    .btn{font-size:15.5px;padding:15px;}
+
+    /* journey rows */
+    .member{padding:16px 0;}
+    .avatar{width:54px;height:54px;font-size:17px;}
+    .member .name{font-size:15.5px;}
+    .member .role{font-size:13px;}
+    .member .pts{font-size:17px;}
+    .badge{font-size:11px;padding:3px 8px;}
+
+    /* green rides tiers */
+    .tier{padding:18px 20px;gap:18px;}
+    .tier .ticon{width:60px;height:60px;font-size:28px;}
+    .tier .tname{font-size:17px;}
+    .tier .tsub{font-size:13.5px;}
+    .tier .mult{font-size:24px;}
+
+    /* rewards */
+    .reward .icon{width:64px;height:64px;font-size:28px;}
+    .cost{font-size:13.5px;padding:3px 10px;}
+
+    /* leaderboards */
+    .segment button{font-size:14.5px;padding:12px;}
+    .lb-row{padding:16px 18px;gap:16px;}
+    .rank{font-size:19px;width:30px;}
+    .lb-row .school{font-size:15.5px;}
+    .lb-row .meta{font-size:12.5px;}
+    .lb-row .lp{font-size:15px;}
+
+    /* bottom nav */
+    nav{padding:12px 12px calc(14px + env(safe-area-inset-bottom));}
+    nav button{font-size:12px;gap:4px;}
+    nav button .ico{font-size:23px;}
   }
   .app{
     max-width:var(--app-width);
@@ -293,7 +349,17 @@
   .settings-overlay.open .settings-panel{transform:translateY(0);}
   @media (min-width:700px){
     .settings-overlay{align-items:center;}
-    .settings-panel{border-radius:22px;max-height:80vh;}
+    .settings-panel{border-radius:22px;max-height:80vh;padding:26px 30px 30px;}
+    .settings-head h2{font-size:22px;}
+    .profile-row .avatar{width:64px;height:64px;font-size:22px;}
+    .profile-row .pname{font-size:18px;}
+    .profile-row .pmeta{font-size:13.5px;}
+    .setting-row{font-size:15px;padding:15px 2px;}
+    .setting-row .srsub{font-size:12.5px;}
+    .settings-group-title{font-size:12px;margin:22px 0 6px;}
+    .toggle{width:48px;height:27px;}
+    .toggle::after{width:21px;height:21px;}
+    .toggle.on::after{left:24px;}
   }
   .settings-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
   .settings-head h2{font-size:19px;font-weight:800;}
