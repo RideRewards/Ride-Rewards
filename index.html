@@ -535,6 +535,14 @@
       <div class="eyebrow">Weekly &amp; monthly</div>
       <h2 class="section-title">Challenges</h2>
 
+      <div class="card" style="border:2px solid var(--bell-yellow);background:#FFFBEF">
+        <span class="sponsor yellow">Refer &amp; earn</span>
+        <h3>Invite a friend, earn 250 pts</h3>
+        <p class="sub">Share your invite code. When a friend signs up and takes their first bus journey, you both get rewarded.</p>
+        <div class="bar-meta" style="margin-top:8px"><span>Your code: <strong style="color:var(--ink)">RIDE-USER7</strong></span><span>3 friends joined</span></div>
+        <button class="btn" onclick="shareReferral(this)">📤 Share invite link</button>
+      </div>
+
       <div class="card">
         <span class="sponsor">Sponsored · Odeon</span>
         <h3>Movie Month Challenge</h3>
@@ -844,6 +852,23 @@
     btn.textContent='✓ Joined';
     btn.classList.add('claimed');
     toast('Challenge joined — good luck! 🚌');
+  }
+
+  // ---- referral share ----
+  function shareReferral(btn){
+    const link = 'https://riderewards.app/invite/RIDE-USER7';
+    if(navigator.share){
+      navigator.share({title:'Join Ride Rewards', text:'Use my code RIDE-USER7 to join Ride Rewards!', url:link}).catch(()=>{});
+    } else if(navigator.clipboard){
+      navigator.clipboard.writeText(link).catch(()=>{});
+    }
+    btn.textContent='✓ Invite link ready';
+    btn.classList.add('claimed');
+    toast('Invite link copied — you\'ll get 250 pts when they join! 🎉');
+    setTimeout(()=>{
+      btn.textContent='📤 Share invite link';
+      btn.classList.remove('claimed');
+    },2600);
   }
 
   // ---- settings overlay ----
